@@ -54,10 +54,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="F7y-Gb-DLR" id="Wzg-Iw-WcK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="866" y="-241"/>
+            <point key="canvasLocation" x="825" y="-241"/>
         </scene>
         <!--Pokedex View Controller-->
         <scene sceneID="cri-Gq-U0k">
@@ -79,7 +82,7 @@
                                 </constraints>
                                 <state key="normal" image="map"/>
                                 <connections>
-                                    <action selector="cancelTapped:" destination="R35-mO-FWi" eventType="touchUpInside" id="s64-Eb-3wD"/>
+                                    <action selector="cancelTapped:" destination="R35-mO-FWi" eventType="touchUpInside" id="FoH-d4-Pa8"/>
                                 </connections>
                             </button>
                         </subviews>
