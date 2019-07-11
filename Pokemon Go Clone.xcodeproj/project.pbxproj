@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		1EA0C37622D78D4F00285C49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA0C37522D78D4F00285C49 /* AppDelegate.swift */; };
-		1EA0C37822D78D4F00285C49 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA0C37722D78D4F00285C49 /* ViewController.swift */; };
 		1EA0C37B22D78D4F00285C49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EA0C37922D78D4F00285C49 /* Main.storyboard */; };
 		1EA0C37E22D78D4F00285C49 /* Pokemon_Go_Clone.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1EA0C37C22D78D4F00285C49 /* Pokemon_Go_Clone.xcdatamodeld */; };
 		1EA0C38022D78D5200285C49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EA0C37F22D78D5200285C49 /* Assets.xcassets */; };
 		1EA0C38322D78D5200285C49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EA0C38122D78D5200285C49 /* LaunchScreen.storyboard */; };
+		1EA0C38B22D793F700285C49 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA0C38A22D793F700285C49 /* MapViewController.swift */; };
+		1EA0C38D22D7941E00285C49 /* PokedexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA0C38C22D7941E00285C49 /* PokedexViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1EA0C37222D78D4F00285C49 /* Pokemon Go Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokemon Go Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EA0C37522D78D4F00285C49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1EA0C37722D78D4F00285C49 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1EA0C37A22D78D4F00285C49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1EA0C37D22D78D4F00285C49 /* Pokemon_Go_Clone.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pokemon_Go_Clone.xcdatamodel; sourceTree = "<group>"; };
 		1EA0C37F22D78D5200285C49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1EA0C38222D78D5200285C49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1EA0C38422D78D5200285C49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1EA0C38A22D793F700285C49 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		1EA0C38C22D7941E00285C49 /* PokedexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +59,8 @@
 			isa = PBXGroup;
 			children = (
 				1EA0C37522D78D4F00285C49 /* AppDelegate.swift */,
-				1EA0C37722D78D4F00285C49 /* ViewController.swift */,
+				1EA0C38A22D793F700285C49 /* MapViewController.swift */,
+				1EA0C38C22D7941E00285C49 /* PokedexViewController.swift */,
 				1EA0C37922D78D4F00285C49 /* Main.storyboard */,
 				1EA0C37F22D78D5200285C49 /* Assets.xcassets */,
 				1EA0C38122D78D5200285C49 /* LaunchScreen.storyboard */,
@@ -138,8 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EA0C37822D78D4F00285C49 /* ViewController.swift in Sources */,
 				1EA0C37E22D78D4F00285C49 /* Pokemon_Go_Clone.xcdatamodeld in Sources */,
+				1EA0C38D22D7941E00285C49 /* PokedexViewController.swift in Sources */,
+				1EA0C38B22D793F700285C49 /* MapViewController.swift in Sources */,
 				1EA0C37622D78D4F00285C49 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
