@@ -40,7 +40,7 @@
                                 </constraints>
                                 <state key="normal" image="pokeball"/>
                                 <connections>
-                                    <segue destination="R35-mO-FWi" kind="presentation" id="RyI-qM-TDu"/>
+                                    <segue destination="R35-mO-FWi" kind="presentation" identifier="moveToPokedex" id="RyI-qM-TDu"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -100,6 +100,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RN1-aY-wZa"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="2ti-Te-qRn" id="qt0-ed-VDQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ec-YN-4m4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

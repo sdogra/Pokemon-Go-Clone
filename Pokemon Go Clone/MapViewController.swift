@@ -43,8 +43,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { (timer) in
             if let center = self.manager.location?.coordinate{
                 var annoCoord = center
-                annoCoord.latitude += (Double.random(in: 0...200) - 100.0) / 20000.0
-                annoCoord.longitude += (Double.random(in: 0...200) - 100.0) / 20000.0
+                annoCoord.latitude += (Double.random(in: 0...200) - 100.0) / 30000.0
+                annoCoord.longitude += (Double.random(in: 0...200) - 100.0) / 30000.0
                 if let pokemon = self.pokemons.randomElement(){
                     let anno = PokeAnnotation(coord: annoCoord, pokemon: pokemon)
                     self.mapView.addAnnotation(anno)
@@ -76,8 +76,48 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         mapView.deselectAnnotation(view.annotation, animated: true)
-        
-        
+        if (view.annotation is MKUserLocation){
+            //This is the user
+        }
+        else {
+            if let center = manager.location?.coordinate{
+                if let pokeCenter = view.annotation?.coordinate{
+                    let region = MKCoordinateRegion(center: pokeCenter, latitudinalMeters: 200, longitudinalMeters: 200)
+                    mapView.setRegion(region, animated: false)
+                    
+                    if let pokeAnnotation = view.annotation as? PokeAnnotation{
+                        if let pokemonName = pokeAnnotation.pokemon.name {
+                            if mapView.visibleMapRect.contains(MKMapPoint(center)){
+                                
+                                //Caught!
+                                pokeAnnotation.pokemon.caught = true
+                                (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+                                
+                                let alertVC = UIAlertController(title: "Congratulations!", message: "You caught a \(pokemonName)", preferredStyle: .alert)
+                                let pokeDexAction = UIAlertAction(title: "PokeDex", style: .default){ (action) in
+                                    self.performSegue(withIdentifier: "moveToPokedex", sender: nil)
+                                }
+                                let okAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+                                alertVC.addAction(pokeDexAction)
+                                alertVC.addAction(okAction)
+                                present(alertVC, animated: true, completion: nil)
+                                
+                            }
+                            else{
+                                //Too far to catch
+                                let alertVC = UIAlertController(title: "Oops!", message: "You were too far from \(pokemonName). Try moving closer!", preferredStyle: .alert)
+                                
+                                let okAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+                                
+                                alertVC.addAction(okAction)
+                                present(alertVC, animated: true, completion: nil)
+                            }
+                        }
+                        
+                    }
+                }
+            }
+        }
         
     }
     
